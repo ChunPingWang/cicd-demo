@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cicd-demo
+  name: cicd-demo
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: cicd-demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cicd-demo
+    spec:
+      containers:
+      - image: mylab2068.azurecr.io/samples/cicd-demo:10
+        name: cicd-demo
+        resources: {}
+status: {}
